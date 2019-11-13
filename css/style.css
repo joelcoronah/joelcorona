@@ -355,7 +355,10 @@ button:focus {
         .home_banner_area .banner_inner .home_right_img img {
           border-radius: 20px;
           max-width: 100%;
-          height: auto; } }
+          height: auto; 
+          -webkit-box-shadow: 0px 0px 28px 0px rgba(115,87,115,1);
+          -moz-box-shadow: 0px 0px 28px 0px rgba(115,87,115,1);
+          box-shadow: 0px 0px 28px 0px rgba(115,87,115,1)} }
       @media (max-width: 991px) {
         .home_banner_area .banner_inner .home_right_img {
           display: none; } }
@@ -2439,6 +2442,7 @@ h6 {
   .about_area .main_title {
     margin-bottom: 0px; }
     .about_area .main_title p {
+      text-align: justify;
       margin-bottom: 20px; }
   .about_area .primary_btn {
     margin-top: 20px; }
