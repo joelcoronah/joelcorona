@@ -3313,8 +3313,8 @@ h6 {
 .logo_img {
     max-width: 300px;
 }
-@media(max-width: 320px){
+@media(max-width: 375px){
     .logo_img {
-        max-width: 200px;
+        max-width: 240px;
     }
 }

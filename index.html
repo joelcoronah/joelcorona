@@ -510,13 +510,15 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <script>
         $( document ).ready(function() {
 
+            changeLogo();
+
             $("#contact").click(function(event){
                 event.preventDefault();
             });
 
         });
 
-        $( window ).resize(function() {
+        $( window ).resize(function(){
             if($(window).width() < 992){
                 $("#logo").fadeOut();
                 $("#logo_mobile").delay(200).fadeIn();
@@ -525,6 +527,16 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                 $("#logo").delay(200).fadeIn();
             }
         });
+
+        function changeLogo(){
+            if($(window).width() < 992){
+                $("#logo").fadeOut();
+                $("#logo_mobile").delay(200).fadeIn();
+            }else{
+                $("#logo_mobile").fadeOut();
+                $("#logo").delay(200).fadeIn();
+            }
+        }
     </script>
 </body>
 
