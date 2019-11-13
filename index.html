@@ -50,7 +50,7 @@
 					<!-- Collect the nav links, forms, and other content for toggling -->
 					<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
 						<ul class="nav navbar-nav menu_nav justify-content-end">
-							<li class="nav-item active"><a class="nav-link" href="index.html">Inicio</a></li>
+							<li class="nav-item active"><a class="nav-link" href="#home">Inicio</a></li>
 							<li class="nav-item"><a class="nav-link" href="#about">Sobre mi</a></li>
 							<li class="nav-item"><a class="nav-link" href="#services">Servicios</a></li>
 							<li class="nav-item"><a class="nav-link" href="#portfolio">Portafolio</a></li>
@@ -64,7 +64,7 @@
 	<!--================ End Header Area =================-->
 
 	<!--================ Start Home Banner Area =================-->
-	<section class="home_banner_area">
+	<section class="home_banner_area" id="home">
 		<div class="banner_inner">
 			<div class="container">
 				<div class="row">
@@ -515,6 +515,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
 	<script src="js/gmaps.min.js"></script>
 	<script src="js/theme.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/noframework.waypoints.min.js"></script>
 
     <script>
         $( document ).ready(function() {
@@ -524,8 +525,63 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
             $("#contact").click(function(event){
                 event.preventDefault();
             });
+            
+            var menues = $(".nav li"); 
 
+            menues.click(function() {
+                menues.removeClass("active");
+                $(this).addClass("active");
+            });
+
+            const waypoints = [
+                {
+                    id: 'home',
+                    handler(direction) { 
+                        menues.removeClass("active");
+                        $(".nav li").eq(0).addClass("active");
+                    }
+                },
+                {
+                    id: 'about',
+                    handler(direction) { 
+                        menues.removeClass("active");
+                        $(".nav li").eq(1).addClass("active");
+                    }
+                },
+                {
+                    id: 'services',
+                    handler(direction) { 
+                        menues.removeClass("active");
+                        $(".nav li").eq(2).addClass("active");
+                    }
+                },
+                {
+                    id: 'portfolio',
+                    handler(direction) { 
+                        menues.removeClass("active");
+                        $(".nav li").eq(3).addClass("active");
+                    }
+                },
+                {
+                    id: 'contact',
+                    handler(direction) { 
+                        menues.removeClass("active");
+                        $(".nav li").eq(4).addClass("active");
+                    }
+                },
+
+            ];
+
+
+            waypoints.forEach(({ id, handler }) => (
+                new Waypoint({
+                    element: document.getElementById(id),
+                    handler,
+                    offset: 20 // añade un margen superior opcional
+                })
+            ));
         });
+
 
         $( window ).resize(function(){
             if($(window).width() < 992){
