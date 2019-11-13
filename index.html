@@ -215,28 +215,28 @@
 			</div>
 			<div class="row feature_inner">
 				<div class="col-lg-3 col-md-6">
-					<div class="feature_item">
+					<div class="feature_item" id="developer">
 						<img src="img/services/s1.png" alt="">
 						<h4>Desarrollo web</h4>
 						<p>Transformare tu idea en un sitio web.</p>
 					</div>
 				</div>
 				<div class="col-lg-3 col-md-6">
-					<div class="feature_item">
+					<div class="feature_item" id=uiux>
 						<img src="img/services/s2.png" alt="">
 						<h4>Diseño UI/ux</h4>
 						<p>Te aseguro que los usuarios se enamoren de tu web.</p>
 					</div>
 				</div>
 				<div class="col-lg-3 col-md-6">
-					<div class="feature_item">
+					<div class="feature_item" id="webdesign">
 						<img src="img/services/s3.png" alt="">
 						<h4>Diseño web</h4>
 						<p>Ajustare cada pequeño detalle para todas las pantallas, garantizando tus gustos.</p>
 					</div>
 				</div>
 				<div class="col-lg-3 col-md-6">
-					<div class="feature_item">
+					<div class="feature_item" id="seo">
 						<img src="img/services/s4.png" alt="">
 						<h4>SEO</h4>
 						<p>Posicionamiento, ¡Tu sitio aparecera de los primeros en Google!</p>
@@ -520,9 +520,9 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/noframework.waypoints.min.js"></script>
 
     <script>
-        $( document ).ready(function() {
+        window.onload($("#loading").delay(400).fadeOut("slow"));
 
-            $("#loading").delay(300).fadeOut("slow");
+        $( document ).ready(function() {
 
             changeLogo();
 
@@ -573,6 +573,30 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                         $(".nav li").eq(4).addClass("active");
                     }
                 },
+                {
+                    id: 'webdesign',
+                    handler(direction) { 
+                        $("#webdesign").addClass('mobile_shadow');
+                    }
+                },
+                {
+                    id: 'uiux',
+                    handler(direction) { 
+                        $("#uiux").addClass('mobile_shadow');
+                    }
+                },
+                {
+                    id: 'developer',
+                    handler(direction) { 
+                        $("#developer").addClass('mobile_shadow');
+                    }
+                },
+                {
+                    id: 'seo',
+                    handler(direction) { 
+                        $("#seo").addClass('mobile_shadow');
+                    }
+                },
 
             ];
 
@@ -589,21 +613,21 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 
         $( window ).resize(function(){
             if($(window).width() < 992){
-                $("#logo").fadeOut();
-                $("#logo_mobile").delay(200).fadeIn('slow');
+                $("#logo").hide();
+                $("#logo_mobile").show();
             }else{
-                $("#logo_mobile").fadeOut('slow');
-                $("#logo").delay(200).fadeIn('slow');
+                $("#logo_mobile").hide();
+                $("#logo").show();
             }
         });
 
         function changeLogo(){
             if($(window).width() < 992){
-                $("#logo").fadeOut('slow');
-                $("#logo_mobile").delay(200).fadeIn('slow');
+                $("#logo").hide();
+                $("#logo_mobile").show();
             }else{
-                $("#logo_mobile").fadeOut('slow');
-                $("#logo").delay(200).fadeIn('slow');
+                $("#logo_mobile").hide();
+                $("#logo").show();
             }
         }
     </script>
