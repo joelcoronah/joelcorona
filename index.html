@@ -407,7 +407,7 @@
                         <div class="info_item">
                             <i class="lnr lnr-phone-handset"></i>
                             <h6><a href="#">+58 (412) 669 2689</a></h6>
-                            <p>Todos los dias, ¡a cualquier hora!</p>
+                            <p>¡Todos los dias, a cualquier hora!</p>
                         </div>
                         <div class="info_item">
                             <i class="lnr lnr-envelope"></i>
@@ -417,7 +417,7 @@
                     </div>
                 </div>
                 <div class="col-lg-9">
-                    <form class="row contact_form" action="contact_process.php" method="post" id="contactForm" novalidate="novalidate">
+                    <form class="row contact_form" action="contact_process.php" method="POST" id="contactForm" novalidate="novalidate">
                         <div class="col-md-6">
                             <div class="form-group">
                                 <input type="text" class="form-control" id="name" name="name" placeholder="Ingresa tu nombre">
@@ -503,6 +503,12 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
 	<script src="js/gmaps.min.js"></script>
 	<script src="js/theme.js"></script>
+
+    <script>
+    $("#contact").click(function(event){
+        event.preventDefault();
+    });
+    </script>
 </body>
 
 </html>
