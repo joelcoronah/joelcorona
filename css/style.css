@@ -3315,6 +3315,6 @@ h6 {
 }
 @media(max-width: 375px){
     .logo_img {
-        max-width: 240px;
+        max-width: 200px;
     }
 }
